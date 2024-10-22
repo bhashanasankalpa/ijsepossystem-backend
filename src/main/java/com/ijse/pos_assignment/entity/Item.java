@@ -1,11 +1,16 @@
 package com.ijse.pos_assignment.entity;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
@@ -31,4 +36,9 @@ public class Item {
     @ManyToOne
     @JoinColumn(name = "itemCategoryId")
     private ItemCategory itemCategory;
+
+    @JsonIgnore
+    @ManyToMany(mappedBy ="saleItems")
+    private List<Sale> sales;
+
 }

@@ -42,5 +42,10 @@ public class StockServiceImpl implements StockService{
             return stockRepository.save(existingStock);
         }
     }
+
+    @Override
+    public Stock getStockByIdnew(Long id) {
+       return stockRepository.findByItemId(id);
+    }
     
 }

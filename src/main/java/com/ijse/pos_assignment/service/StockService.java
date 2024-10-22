@@ -12,5 +12,7 @@ public interface StockService {
     public Stock createStock(Stock stock);
     public Stock getStockById(Long id);
     public Stock updateStock(Long id,Stock stock);
+
+    public Stock getStockByIdnew(Long id);
    
 }
